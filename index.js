@@ -22,7 +22,8 @@ SimpleHttpSwitch.prototype = {
       this.log(res.data);
       callback(null, res.data.value === 0 ? true : false);
     }).catch(err=>{
-      callback(error);
+      this.log(err.stack);
+      callback(err);
     });
   },
 
@@ -31,7 +32,8 @@ SimpleHttpSwitch.prototype = {
     axios.post(this.resource, { value: powerOn ? 0 : 1 }).then((res)=>{
       callback(null);
     }).catch(err=>{
-      callback(error);
+      this.log(err.stack);
+      callback(err);
     });
   },
 
