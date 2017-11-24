@@ -6,7 +6,7 @@
         "pin": "031-45-156"
     },
     
-    "description": "The Onion!",
+    "description": "RESTful button",
 
     "platforms": [],
 
@@ -14,10 +14,7 @@
         {
             "accessory": "SimpleHttpSwitch",
             "name": "Living Room Button",
-            "url": "http://192.168.1.210/button",
-            "default_state_off": true, 
-            "sendimmediately": "",
-            "http_method": "GET"
+            "resource": "http://192.168.1.210/relay"
         }
     ]
 }

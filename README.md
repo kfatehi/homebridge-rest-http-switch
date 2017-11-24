@@ -10,28 +10,3 @@ Supports https devices on HomeBridge Platform
 
 # Configuration
 
-
-
-Configuration sample:
-
- ```
-"accessories": [
-        {
-            "accessory": "SimpleHttpSwitch",
-            "name": "Living Room Button",
-            "url": "http://192.168.1.210/button",
-            "default_state_off": true, 
-            "sendimmediately": "",
-            "http_method": "GET"
-        }
-    ]
-
-```# homebridge-http-simple-switch
-
-# Request
-
-This plugin will call the specified URL for both On and Off state. It expects the server, that receives the request, to toggle the state for each subsequent call.
-
-# Response
-
-The plugin expects to receive a JSON body for all responses <= 400 HTTP Status code. It discards the body of the responses for HTTP status codes > 400 and will treat it as an error.
